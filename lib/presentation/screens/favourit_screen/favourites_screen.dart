@@ -16,14 +16,21 @@ class FavouritesScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ScreenHeader(headerName: 'Your Favorites'),
+              SizedBox(
+                height: 10,
+              ),
               FavouritesBody(),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: CustomNavigationBar(selectedMenu: MenuState.favourite,),
+      bottomNavigationBar: CustomNavigationBar(
+        selectedMenu: MenuState.favourite,
+      ),
     );
   }
 }

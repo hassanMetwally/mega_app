@@ -11,7 +11,7 @@ void main() {
 
 class Mega extends StatelessWidget {
   final AppRouter appRouter;
-  Mega({required this.appRouter});
+  const Mega({super.key, required this.appRouter});
 
   // This widget is the root of your application.
   @override

@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-
 import 'package:flutter/material.dart';
 import 'package:mega/constants/colors.dart';
 import 'package:mega/constants/settings.dart';
@@ -24,10 +23,11 @@ class ProductCard extends StatelessWidget {
     final product = Provider.of<Product>(context);
 
     return Padding(
-      padding: EdgeInsets.only(right:20),
+      padding: EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: (){
-          Navigator.pushNamed(context, detailsScreenRoute, arguments: ProductDetailsArguments(product: product) );
+        onTap: () {
+          Navigator.pushNamed(context, detailsScreenRoute,
+              arguments: ProductDetailsArguments(product: product));
         },
         child: SizedBox(
           width: width,
@@ -39,9 +39,12 @@ class ProductCard extends StatelessWidget {
                     aspectRatio: aspectRatio,
                     child: Container(
                       decoration: BoxDecoration(
-                          color: kWhiteLight,
-                          ),
-                      child: Image.asset(product.images[0],fit: BoxFit.fitWidth,),
+                        color: kWhiteLight,
+                      ),
+                      child: Image.asset(
+                        product.images[0],
+                        fit: BoxFit.fitWidth,
+                      ),
                     ),
                   ),
                   Positioned(
@@ -54,7 +57,10 @@ class ProductCard extends StatelessWidget {
               SizedBox(height: 10),
               Text(
                 product.title,
-                style: TextStyle(fontSize:12,color: Colors.black,fontWeight: FontWeight.w700),
+                style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700),
                 maxLines: 2,
               ),
               Row(
@@ -63,13 +69,16 @@ class ProductCard extends StatelessWidget {
                     '100\$',
                     style: TextStyle(
                         decoration: TextDecoration.lineThrough,
-                        decorationColor: kNeutralGray, // Set strikethrough color
+                        decorationColor:
+                            kNeutralGray, // Set strikethrough color
                         decorationThickness: 2,
                         fontSize: 10,
                         fontWeight: FontWeight.w700,
                         color: kNeutralGray),
                   ),
-                  SizedBox(width: 8,),
+                  SizedBox(
+                    width: 8,
+                  ),
                   Text(
                     '${product.price}\$',
                     style: TextStyle(
@@ -87,4 +96,3 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
-

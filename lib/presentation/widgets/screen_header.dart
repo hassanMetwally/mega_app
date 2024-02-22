@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_brace_in_string_interps, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
